@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let weight = parseFloat(prompt("Enter your weight in kg"));
+        let heightInFeet = parseFloat(prompt("Enter your height in feet"));
+        let heightInMeters = heightInFeet * 0.3048; 
+        let bmi = weight / (heightInMeters * heightInMeters);
+        let status;
+
+        switch (true) {
+            case (bmi < 18.5):
+            status = "Underweight";
+            break;
+            case (bmi >= 18.5 && bmi < 25):
+            status = "Normal weight";
+            break;
+            case (bmi >= 25 && bmi < 30):
+            status = "Overweight";
+            break;
+            default:
+            status = "Obese";
+        }
+        alert(`Your BMI is ${bmi.toFixed(2)} and you are ${status}.`);
+    </script>
+</body>
+</html>
